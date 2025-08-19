@@ -1,93 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  
-    <!-- PUT YOUR PAGE NAME -->
-    <title>BICA</title>
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="my-styles.css" />
-    
-    <!-- The following libraries and polyfills are recommended to maximize browser support -->
-    <!-- NOTE: you must adjust the paths as appropriate for your project -->
-    
-    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
-    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
-
+    <meta charset="UTF-8" />
+    <title>My AR Installation</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #000;
+      }
+      model-viewer {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
   </head>
-
   <body>
-    
-    
-    
-    
-    
-    <!-- HERE IS WHERE THE MAGIC HAPPENS!
-src = link to your glb asset
-ios-src = link to your USDZ asset (for iOS/iPhone) 
-shadow-intensity= how visible you want your shadows to be
-
-skybox & environment images = upload and link your hdr image
-the rest leaveit as it is!-->
-    
+    <!-- Prikaz tvog .glb modela -->
     <model-viewer
-      src="./assets/BL_frida.glb"
-   
-      shadow-intensity="1"
-                  
-      skybox-image=
-      
-      environment-image=
-      exposure="4"
-                  
+      src="model.glb"
+      alt="3D Model"
+      auto-rotate
+      camera-controls
       ar
       ar-modes="webxr scene-viewer quick-look"
-      ar-placement="floor"
-      camera-controls
-      autoplay
-      ar-scale="auto"
-      auto-rotate
-    >
-      
-      <!-- *optional: REPLACE THE URL WITH YOUR GRAPHIC FOR THE AR BUTTON -->
-      <button slot="ar-button" id="ar-button"  
-              style= "background-image: url(https://cdn.glitch.com/9925848b-5a39-4193-9260-14fab8f75609%2FGlyph-ARKit-Badge-WithName.png?v=1621706814890)"
-      ></button>
+      shadow-intensity="1">
     </model-viewer>
-   
-   
-
-  
- 
-    
- <!-- DO NOT DELETE! -->
-<footer>
-
-  <p>PERMA BIO LUDIC METABOLISM ALL YOU CAN PLAY BETWEEN HOMO LUDENS AND BACTERIA </p>
-     
-    <p style= "font-size: 7px">
-    <a href="https://martinamenegon.xyz/">Ivan Bica</a>
-      *
-    Digital Design and Virtuality (2025)
-      *
-    <a href="https://transmedialekunst.com/en/">EGC</a>
-      *
-    <a href="https://www.dieangewandte.at/">Die Angewandte</a>
-  </p>
-  <br>
-</footer> 
-
-    <!-- DO NOT DELETE! -->
-  <!-- 💁 Include both scripts below to support all browsers! -->
-
-  <!-- Loads <model-viewer> for modern browsers: -->
-  <script type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
-  </script>
   </body>
 </html>
